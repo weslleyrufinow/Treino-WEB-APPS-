@@ -1,0 +1,16 @@
+bean\EquacaoSegundoGrauBean.class
+modelo\Calculadora2.class
+bean\CalculadoraBean2.class
+bean\CursosBean.class
+bean\MaiusculoBean.class
+modelo\Dado.class
+bean\DadoBean.class
+bean\TextoBean.class
+modelo\Maiusculo.class
+modelo\Mulher.class
+bean\QuantidadeBean.class
+modelo\Texto.class
+modelo\Homem.class
+modelo\Curso.class
+modelo\EquacaoSegundoGrau.class
+modelo\Programa.class

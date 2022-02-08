@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head >
+ <title>Calculadora</title>
+</h:head >
+
+<h:body>
+<h:form>
+
+<p:panelGrid columns ="4">
+ <p:outputLabel value ="Digite um numero A:"/>
+ <p:inputText value ="#{calculadoraBean2.calculadora2.a}"/> 
+ <p:outputLabel value ="Digite um numero B:"/>
+ <p:inputText value ="#{calculadoraBean2.calculadora2.b}"/>
+ <p:outputLabel value ="Digite um numero C:"/>
+ <p:inputText value ="#{calculadoraBean2.calculadora2.c}"/> 
+ <p:outputLabel value ="Digite um numero D:"/>
+ <p:inputText value ="#{calculadoraBean2.calculadora2.d}"/> 
+ <p:commandButton value ="Calcular" update="display" /> 
+  </p:panelGrid>
+  
+ <p:panelGrid columns ="1" id="display">
+<h:outputText value="#{calculadoraBean2.calculadora2.resultado}"/> 
+ </p:panelGrid>
+ </h:form>
+ 
+</h:body >
+</html>

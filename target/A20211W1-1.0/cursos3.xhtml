@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      	xmlns:p="http://primefaces.org/ui">
+<h:head >
+ <title>Cursos</title>
+<h:outputStylesheet library="css" name="main.css" />
+</h:head >
+
+<h:body>
+<h:form>
+
+<h:panelGrid columns ="2">
+ <h:outputLabel value ="Nome :" for ="campo-nome" />
+ <p:inputText value ="#{cursosBean.curso.nome}" id="campo-nome"  styleClass="edit"/>
+
+ <h:outputLabel value ="Sigla :" for ="campo-sigla" />
+ <p:inputText value ="#{cursosBean.curso.sigla}" id="campo-sigla"  styleClass="edit"  />
+
+  <h:outputLabel value ="Centro :" for ="centro" />
+  <p:selectOneMenu id="console1" value="#{cursosBean.curso.centro}" style="width:125px"  styleClass="edit">
+            <f:selectItem itemLabel="Selecionar centro" itemValue="" />
+            <f:selectItem itemLabel="Exatas" itemValue="Exatas"  />
+            <f:selectItem itemLabel="Humanas" itemValue="Humanas" />
+            <f:selectItem itemLabel="Saúde" itemValue="Saude" />
+   </p:selectOneMenu>
+  
+    <h:outputLabel value ="Turno :" for ="turno" />
+<p:selectOneRadio id="console2" value="#{cursosBean.curso.turno}"  styleClass="edit" >
+            <f:selectItem itemLabel="Manhã" itemValue="Manha"   />
+            <f:selectItem itemLabel="Tarde" itemValue="Tarde" />
+</p:selectOneRadio>
+
+    <h:commandButton value ="#{cursosBean.nomeBotao()}" action ="#{cursosBean.adicionaCurso}" styleClass="botoes"   />
+ <h:commandButton value ="Cancelar" action ="#{cursosBean.cancelar}" styleClass="botoes"/>
+
+</h:panelGrid >
+
+ <p:dataTable value ="#{cursosBean.cursos}" var ="curso" rendered ="#{not empty cursosBean.cursos}" styleClass="tabela" >
+
+    <f:facet name ="header">Lista de Cursos </f:facet>
+
+    <p:column>
+    <f:facet name ="header">Nome</f:facet>
+    #{curso.nome}
+    </p:column>
+    <p:column>
+    <f:facet name ="header">Sigla</f:facet>
+    #{curso.sigla}
+    </p:column>
+    <p:column>
+    <f:facet name ="header">Centro </f:facet>
+    #{curso.centro}
+    </p:column>
+    <p:column>
+    <f:facet name ="header">Turno </f:facet>
+    #{curso.turno}
+    </p:column>
+    <p:column>
+    <f:facet name ="header">Remover </f:facet>
+    <p:commandButton value ="Remover" action ="#{cursosBean.removeCurso(curso)}"   process="@form"  update="@form"  styleClass="botoes" class="botoes"/>
+    </p:column>
+    <p:column>
+    <f:facet name ="header">Alterar</f:facet>
+    <p:commandButton value ="Alterar" action ="#{cursosBean.carregar(curso)}"   process="@form"  update="@form"  styleClass="botoes"/>
+    </p:column>
+
+    </p:dataTable>
+ 
+</h:form>
+ </h:body >
+</html>

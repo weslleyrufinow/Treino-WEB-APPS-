@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head >
+ <title>Equacao segundo grau</title>
+</h:head >
+
+<h:body>
+<h:form>
+<h:messages id="messages" />
+<p:panelGrid columns ="2" >
+ 
+    <h:outputLabel value ="Digite um numero (A):"/>
+    <h:inputText value="#{equacaoSegundoGrauBean.equacao.a}" required="true" requiredMessage="Valor obrigatorio para A" /> 
+ 
+ <h:outputLabel value ="Digite um numero (B):"/>
+ <h:inputText value ="#{equacaoSegundoGrauBean.equacao.b}" required="true" requiredMessage="Valor obrigatorio para B"/>
+
+ <h:outputLabel value ="Digite um numero (C):"/>
+ <h:inputText value ="#{equacaoSegundoGrauBean.equacao.c}" required="true" requiredMessage="Valor obrigatorio para C"/>
+
+ <h:commandButton value ="Calcular" action="#{equacaoSegundoGrauBean.submeter()}"/>
+  </p:panelGrid>
+  
+ <p:panelGrid columns ="2" id="display">
+     <h:outputText value="#{equacaoSegundoGrauBean.x1}"/>
+     <h:outputText value="#{equacaoSegundoGrauBean.x2}"/>
+ 
+ </p:panelGrid>
+ </h:form>
+ 
+</h:body >
+</html>
+
+
+
